@@ -16,6 +16,8 @@ TEST_FILE_NAME: str = "test.csv"
 
 SCHEMA_FILE_PATH = os.path.join("data_schema","schema.yaml")
 
+
+
 """
 Data Ingestion related constant start with DATA_INGESTION VAR NAME 
 """
@@ -55,4 +57,15 @@ DATA_TRANSFORMATION_TRAIN_FILE_PATH: str = "train.npy"
 DATA_TRANSFORMATION_TEST_FILE_PATH: str = "test.npy"
 
 PREPROCESSING_OBJECT_FILE_NAME: str = "preprocessing.pkl"
+
+
+"""
+Model Trainer related constant start with MODE TRAINER VAR NAME
+"""
+MODEL_TRAINER_DIR_NAME: str = "model_trainer"
+MODEL_TRAINER_TRAINED_MODEL_DIR: str = "trained_model"
+MODEL_FILE_NAME: str = "model.pkl"
+MODEL_TRAINER_EXPECTED_SCORE: float = 0.6
+MODEL_TRAINER_OVER_FITTING_UNDER_FITTING_THRESHOLD: float = 0.05
+SAVED_MODEL_DIR = os.path.join("saved_models")
 
