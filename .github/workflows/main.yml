@@ -73,11 +73,6 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Free disk space before deploy
-        run: |
-          docker system prune -af --volumes || true
-          rm -rf /home/ubuntu/actions-runner/_diag/* || true
-
       - name: Pull latest image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
