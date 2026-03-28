@@ -95,4 +95,4 @@ async def predict_route(request:Request, file:UploadFile=File(...)):
 # 8. Point d'entrée 
 # Lance le serveur Uvicorn (serveur ASGI async) sur localhost:8000 quand le fichier est exécuté directement (python app.py).
 if __name__ == "__main__" :
-    app_run(app,host = "localhost", port = 8000)
+    app_run(app,host = "0.0.0.0", port = 8000)
