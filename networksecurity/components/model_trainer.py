@@ -24,7 +24,15 @@ from sklearn.ensemble import(
 import mlflow
 
 import dagshub
-dagshub.init(repo_owner='okankcb', repo_name='networksecurity', mlflow=True)
+
+ENABLE_DAGSHUB = os.getenv("ENABLE_DAGSHUB", "false").lower() == "true"
+dagshub_token = os.getenv("DAGSHUB_TOKEN")
+
+if ENABLE_DAGSHUB and dagshub_token:
+    dagshub.auth.add_app_token(dagshub_token)
+    dagshub.init(repo_owner='okankcb', repo_name='networksecurity', mlflow=True)
+else:
+    print("DagsHub désactivé pour ce lancement.")
 
 
 class ModelTrainer:
